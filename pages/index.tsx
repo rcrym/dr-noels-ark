@@ -9,7 +9,7 @@ import {
     Stack,
     Text,
     useBreakpointValue,
-    VStack
+    VStack,
 } from "@chakra-ui/react";
 import { logEvent } from "firebase/analytics";
 import Image from "next/image";
@@ -27,15 +27,15 @@ import Navbar from "../components/Navbar";
 import { analytics } from "../constants/firebase";
 // import ArkNarrowBackgroundPhoto from "../public/images/ark-background-phone.png";
 // import ArkBackgroundPhoto from "../public/images/ark-background.png";
-import AyurvedaPhoto from "../public/images/ayurveda.jpeg";
+import AyurvedaPhoto from "../public/images/ayurveda-small.png";
 import FearFreeCertifiedPhoto from "../public/images/ff-certified-professional.png";
 import FearFreeLogoPhoto from "../public/images/ff-logo.png";
-import ForestMountainsPhoto from "../public/images/forest-mountains.jpeg";
-import HomeopathyPhoto from "../public/images/homeopathy.jpeg";
+import ForestMountainsPhoto from "../public/images/forest-mountains-small.png";
+import HomeopathyPhoto from "../public/images/homeopathy-small.png";
 import LookingAtCatPhoto from "../public/images/looking-at-cat-enhanced.png";
 import HeroPortraitPhoto from "../public/images/no-background-portrait.png";
-import NutritionPhoto from "../public/images/nutrition.jpeg";
-import RiverPhoto from "../public/images/river.jpeg";
+import NutritionPhoto from "../public/images/nutrition-small.png";
+import RiverPhoto from "../public/images/river-small.png";
 
 interface HomeProps {}
 
@@ -70,8 +70,8 @@ const Home: React.FC<HomeProps> = ({}) => {
         <>
             <HeadTemplate
                 title="Dr. Noel's Ark - Natural Veterinary Care"
-                description="Holistic veterinary practice offering homeopathy, nutritional support, and ayurvedic supplements. Available for house calls in the San Francisco Bay Area."
-                short_description="Holistic Bay Area House Call Veterinarian"
+                description="Holistic veterinary practice offering homeopathy, nutritional support, and ayurvedic supplements. Available through virtual consultations for cats and dogs in California."
+                short_description="Holistic California Veterinarian"
                 url="https://www.drnoelsark.com"
             />
 
@@ -246,11 +246,9 @@ const Home: React.FC<HomeProps> = ({}) => {
                                             }}
                                         >
                                             Professional holistic veterinary
-                                            services available as house calls
-                                            for cats and dogs in Berkeley,
-                                            Albany, Kensington, Montclair,
-                                            Piedmont, Moraga, Orinda, Lafayette,
-                                            Walnut Creek, and Danville.
+                                            services offered through virtual
+                                            consultations for cats and dogs in
+                                            California.
                                         </Text>
                                         <Text
                                             mt={{ base: "5", lg: "10" }}
@@ -422,7 +420,7 @@ const Home: React.FC<HomeProps> = ({}) => {
                     mb={{ base: "40px", lg: "120px" }}
                     flexDirection={{ base: "column", lg: "row" }}
                 >
-                    <Box w={{ base: "80%", lg: "30%" }}>
+                    {/* <Box w={{ base: "80%", lg: "30%" }}>
                         {isBase ? (
                             <Box
                                 borderColor={"brand.500"}
@@ -454,11 +452,11 @@ const Home: React.FC<HomeProps> = ({}) => {
                                 </Box>
                             </Parallax>
                         )}
-                    </Box>
+                    </Box> */}
                     <Box
-                        w={{ base: "80%", lg: "40%" }}
+                        w={{ base: "80%", lg: "60%" }}
                         fontSize={16}
-                        mt={{ base: "10" }}
+                        // mt={{ base: "10" }}
                     >
                         <Stack spacing="5">
                             <Text>
@@ -545,7 +543,7 @@ const Home: React.FC<HomeProps> = ({}) => {
                                     as={RiGroupFill}
                                     color="brand.400"
                                 />
-                                American Association of Feline Practitioners
+                                Feline Veterinary Medical Association
                             </Flex>
                             <Flex>
                                 <Icon
@@ -688,66 +686,34 @@ const Home: React.FC<HomeProps> = ({}) => {
                 </Flex>
             </Box>
             <Box fontSize={0}>
-                {isBase ? (
-                    // <Box
-                    //     height={"400px"}
-                    //     width={"100%"}
-                    //     bgSize={"cover"}
-                    //     bgPos="center"
-                    //     bgImage="/images/forest-mountains.jpeg"
-                    // />
-
+                <Box
+                    position={"relative"}
+                    h={{ base: "400px", lg: "500px" }}
+                    w="100%"
+                    clipPath={"inset(0)"}
+                    zIndex="-20"
+                >
                     <Box
-                        position={"relative"}
-                        h="400px"
+                        position={"fixed"}
+                        height="100vh"
                         w="100%"
-                        clipPath={"inset(0)"}
+                        top="0"
+                        bottom="0"
                         zIndex="-20"
                     >
-                        <Box
-                            position={"fixed"}
-                            height="100vh"
-                            w="100%"
-                            top="0"
-                            bottom="0"
-                            zIndex="-20"
-                        >
-                            <Image
-                                layout="fill"
-                                // height="100vh"
-                                objectFit="cover"
-                                // placeholder="blur"
-                                src={ForestMountainsPhoto}
-                                alt="Forest and mountains background"
-                                sizes="800px"
-                                // width={"100%"}
-                                // height={"400px"}
-                            />
-                        </Box>
+                        <Image
+                            layout="fill"
+                            // height="100vh"
+                            objectFit="cover"
+                            // placeholder="blur"
+                            src={ForestMountainsPhoto}
+                            alt="Forest and mountains background"
+                            sizes="800px"
+                            // width={"100%"}
+                            // height={"400px"}
+                        />
                     </Box>
-                ) : (
-                    // <ParallaxBanner
-                    //     layers={[
-                    //         { image: "/images/forest-mountains.jpeg", speed: -35 },
-                    //     ]}
-                    //     className="aspect-[2/1]"
-                    //     style={{ height: "100vh" }}
-                    // />
-                    <Box zIndex={-50} position="relative" maxHeight={"400px"}>
-                        <Parallax speed={-35}>
-                                <Image
-                                // placeholder="blur"
-                                src={ForestMountainsPhoto}
-                                alt="Forest and mountains background"
-                                // sizes="5760px"
-                                // width={5760}
-                                // height={3840}
-                                    // height={"50%"}
-                                    // height={"50vh"}
-                            />
-                        </Parallax>
-                    </Box>
-                )}
+                </Box>
             </Box>
             <Box id="services"></Box>
             <Box bgColor={"white"} py="120" ref={servicesRef}>
@@ -1097,8 +1063,8 @@ const Home: React.FC<HomeProps> = ({}) => {
                                     as={MdCheckCircle}
                                     color="green.300"
                                 />
-                                Less animal stress – consultations can be done
-                                in your home
+                                Less animal stress – consultations done in your
+                                home
                             </Flex>
                             <Flex>
                                 <Icon
@@ -1233,67 +1199,34 @@ const Home: React.FC<HomeProps> = ({}) => {
                 </Flex>
             </Flex>
             <Box fontSize={0}>
-                {isBase ? (
-                    // <Box
-                    //     height={"400px"}
-                    //     width={"100%"}
-                    //     bgSize={"cover"}
-                    //     bgPos="center"
-                    //     bgImage="/images/river.jpeg"
-                    // />
-                    // <Box>
+                <Box
+                    position={"relative"}
+                    h={{ base: "400px", lg: "500px" }}
+                    w="100%"
+                    clipPath={"inset(0)"}
+                    zIndex="-20"
+                >
                     <Box
-                        position={"relative"}
-                        h="400px"
+                        position={"fixed"}
+                        height="100vh"
                         w="100%"
-                        clipPath={"inset(0)"}
+                        top="0"
+                        bottom="0"
                         zIndex="-20"
                     >
-                        <Box
-                            position={"fixed"}
-                            height="100vh"
-                            w="100%"
-                            top="0"
-                            bottom="0"
-                            zIndex="-20"
-                        >
-                            <Image
-                                layout="fill"
-                                // height="100vh"
-                                objectFit="cover"
-                                // placeholder="blur"
-                                src={RiverPhoto}
-                                alt="Shallow river at sunset with foliage and mountains in the background"
-                                sizes="800px"
-                                // width={"100%"}
-                                // height={"400px"}
-                            />
-                        </Box>
+                        <Image
+                            layout="fill"
+                            // height="100vh"
+                            objectFit="cover"
+                            // placeholder="blur"
+                            src={RiverPhoto}
+                            alt="Shallow river at sunset with foliage and mountains in the background"
+                            sizes="800px"
+                            // width={"100%"}
+                            // height={"400px"}
+                        />
                     </Box>
-                ) : (
-                    // <ParallaxBanner
-                    //     layers={[{ image: "/images/river.jpeg", speed: -35 }]}
-                    //     className="aspect-[2/1]"
-                    //     style={{ height: "100vh" }}
-                    //     />
-                    <Box zIndex={-50} position="relative"  maxHeight={"400px"}>
-                        <Parallax speed={-35}>
-                                <Image
-                                // placeholder="blur"
-                                src={RiverPhoto}
-                                alt="Shallow river at sunset with foliage and mountains in the background"
-                                // width={"100%"}
-                                style={{
-                                    position: 'absolute',
-                                    bottom: '50%', // Adjust this value to shift the image down to the desired amount
-                                }}
-                                // sizes="5760px"
-                                // width={5760}
-                                // height={3840}
-                            />
-                        </Parallax>
-                    </Box>
-                )}
+                </Box>
             </Box>
             <Box id="pricing"></Box>
             <Box bgColor={"white"} py="120" ref={pricingRef}>
@@ -1353,7 +1286,7 @@ const Home: React.FC<HomeProps> = ({}) => {
                                 homeopathic and nutritional treatment to address
                                 your pet's health issues, you will need to make
                                 an appointment with me for an initial
-                                consultation in your home.
+                                consultation.
                             </Text>
                             <NextLink
                                 href="/make-appointment?for=free-15-minute-consultation"
@@ -1422,19 +1355,18 @@ const Home: React.FC<HomeProps> = ({}) => {
                                 fontWeight={"bold"}
                             >
                                 {"Initial Consultation" +
-                                    (isBase ? " — $320" : "")}
+                                    (isBase ? " — $280" : "")}
                             </Text>
                             <Text my="5" fontSize="16">
-                                This is an in-person consultation for me to get
-                                to know your pet and the health issues needing
-                                to be addressed. The fee includes a review of
-                                previous medical records, a physical
-                                examination, as well as a case analysis after
-                                the consultation to decide on the appropriate
-                                homeopathic remedy selection, and to determine
-                                beneficial nutritional supplements as well as
-                                dietary changes. My house call visit takes 1
-                                hour.
+                                This is a virtual consultation for me to get to
+                                know your pet and the health issues needing to
+                                be addressed. The fee includes a review of
+                                previous medical records, as well as a case
+                                analysis after the consultation to decide on the
+                                appropriate homeopathic remedy selection, and to
+                                determine beneficial nutritional supplements as
+                                well as dietary changes. The initial
+                                consultation takes 1 hour.
                             </Text>
                             <NextLink
                                 href="/make-appointment?for=initial-consultation"
@@ -1477,7 +1409,7 @@ const Home: React.FC<HomeProps> = ({}) => {
                                 w={{ base: "auto", lg: "15%" }}
                                 my={{ base: "30px", lg: "0px" }}
                             >
-                                $320
+                                $280
                             </Text>
                         )}
                     </Flex>
@@ -1560,7 +1492,7 @@ const Home: React.FC<HomeProps> = ({}) => {
                             </Text>
                         )}
                     </Flex>
-                    {isBase && (
+                    {/* {isBase && (
                         <Divider
                             orientation={"horizontal"}
                             borderColor={"brand.500"}
@@ -1635,7 +1567,7 @@ const Home: React.FC<HomeProps> = ({}) => {
                                 $160
                             </Text>
                         )}
-                    </Flex>
+                    </Flex> */}
                 </Stack>
             </Box>
             {/* <Flex justify={"center"} alignItems={"center"} bgColor="gray.100">
