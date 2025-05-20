@@ -61,7 +61,7 @@ const MakeAppointment: React.FC<MakeAppointmentProps> = ({}) => {
             special: "phone-number",
         },
         {
-            label: "City in California",
+            label: "City",
             required: true,
             // special: "dropdown",
             helperText: "Services can only be offered to pet parents residing in California.",
