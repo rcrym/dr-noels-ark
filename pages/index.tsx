@@ -28,8 +28,8 @@ import { analytics } from "../constants/firebase";
 // import ArkNarrowBackgroundPhoto from "../public/images/ark-background-phone.png";
 // import ArkBackgroundPhoto from "../public/images/ark-background.png";
 import AyurvedaPhoto from "../public/images/ayurveda-small.png";
-import FearFreeCertifiedPhoto from "../public/images/ff-certified-professional.png";
-import FearFreeLogoPhoto from "../public/images/ff-logo.png";
+import FearFreeCertifiedPhoto from "../public/images/ff-certified-professional-new.jpeg";
+import FearFreeLogoPhoto from "../public/images/ff-logo-new.jpg";
 import ForestMountainsPhoto from "../public/images/forest-mountains-small.png";
 import HomeopathyPhoto from "../public/images/homeopathy-small.png";
 import LookingAtCatPhoto from "../public/images/looking-at-cat-enhanced.png";
@@ -645,13 +645,13 @@ const Home: React.FC<HomeProps> = ({}) => {
                 </Flex>
                 <Flex
                     display={"flex"}
-                    alignItems={"flex-end"}
+                    alignItems={"center"}
                     justify={"space-evenly"}
                     fontSize={16}
                     height={"130px"}
                 >
                     <Box
-                        width={{ base: "30%", lg: "20%" }}
+                        width={{ base: "30%", lg: "15%" }}
                         fontSize={0}
                         // height={{ base: "80%", lg: "100%" }}
                         // flex={1}
@@ -669,7 +669,7 @@ const Home: React.FC<HomeProps> = ({}) => {
                         />
                     </Box>
                     <Box
-                        width={{ base: "30%", lg: "15%" }}
+                        width={{ base: "35%", lg: "20%" }}
                         fontSize={0}
                         // flex={1}
                         // backgroundImage={"/images/ff-logo.png"}
