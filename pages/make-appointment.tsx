@@ -408,7 +408,7 @@ const MakeAppointment: React.FC<MakeAppointmentProps> = ({}) => {
                                                 (appointmentField) => (
                                                     <Field
                                                         name={
-                                                            appointmentField.label
+                                                            appointmentField.label == "City" ? "City in California" : appointmentField.label
                                                         }
                                                         key={
                                                             appointmentField.label

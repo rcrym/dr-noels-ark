@@ -38,7 +38,7 @@ export default function handler(
 
     // res.status(200).json({ name: "John Doe" });
     const msg = {
-        to: "drnoelsarknvc@gmail.com",
+        to: "rileyc2022@gmail.com",
         from: "drnoel@drnoelsark.com",
         templateId: "d-dc0588bc1518404a9942817a5f656ddf",
         dynamicTemplateData: {
@@ -46,7 +46,7 @@ export default function handler(
             name: emailData["First name"] + " " + emailData["Last name"],
             email_address: emailData["Email address"],
             phone_number: emailData["Phone number"],
-            city: emailData.City,
+            city: emailData["City"],
             time_and_day_preferences: `${
                 (emailData["Preferred day of week"] ||
                     emailData["Preferred time of day"]) &&
@@ -59,7 +59,7 @@ export default function handler(
                     emailData["Preferred time of day"] + "s"
                 }`
             }`,
-            message: emailData.Message,
+            user_message: emailData["Message"],
         },
     };
     sgMail
